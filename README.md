@@ -4,18 +4,26 @@ Easy to Install. Easy to run. Easy to use. Database server to build prototypes.
 
 ## What?
 
-You know aiohttp? At least you know requests? Meh... Let's just define a bunch
-of helper functions.
+Create, read, update:
 
-### `/api/v0/create/`
+```python
+# connect to deuspy at localhost port 9090
+client = Deuspy('http://localhost:9090', 'repl-one')
+# create a new document, return it's unique identifier
+uid = client.create(dict(type='project', title='deuspy', tagline='Prototypes. For. Fun.', popularity=1))
+doc = client.get(uid)
+doc['popularity'] += 31415  # please! use it! start it! and use it again!
+# update document
+client.update(uid, doc)
+```
 
-### `/api/v0/read/{{ uid }}`
+You can also query and delete stuff:
 
-### `/api/v0/update/`
-
-### `/api/v0/delete/{{ uid }}`
-
-### `/api/v0/query/`
+```python
+# let's reuse the previous connection
+uid = next(client.query(type='project', title='hoodie'))
+client.delete(uid)  # no more hoodie!
+```
 
 ## How?
 
