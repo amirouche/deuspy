@@ -2,6 +2,8 @@
 
 Easy to Install. Easy to run. Easy to use. Database server to build prototypes.
 
+The name "deuspy" comes from a slang term in french which means "quickly".
+
 ## What?
 
 Create, read, update:
@@ -31,7 +33,7 @@ Magic!
 
 ## Why?
 
-Because I can and because I need it. I want to present @ pyconfr 2018 a workshop 
+Because I can and because I need it. I want to present @ pyconfr 2018 a workshop
 around [aiohttp](https://aiohttp.readthedocs.io/en/stable/). I don't want people
 to feel bad at the very begining of their journey because they need to choose a
 database. This. Is. For. Fun. And learn aiohttp. I don't want myself to have in
