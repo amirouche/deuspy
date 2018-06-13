@@ -1,5 +1,7 @@
 # deuspy
 
+**This is a work in progress, the README serves as ROADMAP**
+
 Easy to Install. Easy to run. Easy to use. Database server to build prototypes.
 
 The name "deuspy" comes from a slang term in french which means "quickly".
