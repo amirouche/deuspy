@@ -1,6 +1,6 @@
 # deuspy
 
-Easy to Install. Easy to run. Easy to use.Database server to build prototypes.
+Easy to Install. Easy to run. Easy to use. Database server to build prototypes.
 
 ## What?
 
