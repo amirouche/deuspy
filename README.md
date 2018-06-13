@@ -9,11 +9,14 @@ The name "deuspy" comes from a slang term in french which means "quickly".
 Create, read, update:
 
 ```python
+from deuspy.client.sync import Deuspy
+
+
 # connect to deuspy at localhost port 9090
 client = Deuspy('http://localhost:9090', 'repl-one')
 # create a new document, return it's unique identifier
 uid = client.create(dict(type='project', title='deuspy', tagline='Prototypes. For. Fun.', popularity=1))
-doc = client.get(uid)
+doc = client.read(uid)
 doc['popularity'] += 31415  # please! use it! start it! and use it again!
 # update document
 client.update(uid, doc)
