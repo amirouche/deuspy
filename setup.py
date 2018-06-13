@@ -19,6 +19,11 @@ setup(
     packages=find_packages(),
     zip_safe=False,
     license='Apache',
+    install_requires=[
+        "aiohttp<=3.3",
+        "plyvel<=1.0",
+        "requests<=2.19",
+    ],
     classifiers=[
         'Intended Audience :: Developers',
         'Operating System :: OS Independent',
