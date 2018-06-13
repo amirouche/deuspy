@@ -10,7 +10,7 @@ def read(fname):
 
 setup(
     name='deuspy',
-    version='0.0',
+    version='0.1',
     author='Amirouche Boubekki',
     author_email='amirouche@hypermove.net',
     url='https://github.com/amirouche/deuspy',
@@ -20,9 +20,9 @@ setup(
     zip_safe=False,
     license='Apache',
     install_requires=[
-        "aiohttp<=3.3",
-        "plyvel<=1.0",
-        "requests<=2.19",
+        "aiohttp>=3.3",
+        "plyvel>=1.0",
+        "requests>=2.19",
     ],
     classifiers=[
         'Intended Audience :: Developers',
