@@ -71,21 +71,26 @@ class Deuspy:
         self._save(doc, uid)
 
     def query(self, **kwargs):
-        items = list(kwargs.items())
-        key, value = items[0]
-        rest = items[1:]
+        if kwargs:
+            items = list(kwargs.items())
+            key, value = items[0]
+            rest = items[1:]
 
-        start = pack((key, value, 0))
-        stop = pack((key, value, sys.maxsize))
+            start = pack((key, value, 0))
+            stop = pack((key, value, sys.maxsize))
 
-        iterator = self._index.iterator(start=start, stop=stop, include_value=False)
+            iterator = self._index.iterator(start=start, stop=stop, include_value=False)
 
-        for index in iterator:
-            _, _, uid = unpack(index)
-            for key, value in rest:
-                index = pack((key, value, uid))
-                if self._index.get(index) is None:
-                    break  # skip it
-            else:
-                # all the kwargs match
+            for index in iterator:
+                _, _, uid = unpack(index)
+                for key, value in rest:
+                    index = pack((key, value, uid))
+                    if self._index.get(index) is None:
+                        break  # skip it
+                else:
+                    # all the kwargs match
+                    yield uid
+        else:
+            for key in self._docs.iterator(include_value=False):
+                uid = unpack(key)[0]
                 yield uid
