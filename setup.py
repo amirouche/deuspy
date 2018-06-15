@@ -10,7 +10,7 @@ def read(fname):
 
 setup(
     name='deuspy',
-    version='0.1.1',
+    version='0.2',
     author='Amirouche Boubekki',
     author_email='amirouche@hypermove.net',
     url='https://github.com/amirouche/deuspy',
