@@ -2,6 +2,7 @@ import json
 import sys
 from random import randint
 
+from deuspy.base import DeuspyBase
 from deuspy.packing import pack
 from deuspy.packing import unpack
 
@@ -12,7 +13,7 @@ def random():
     return randint(0, sys.maxsize)
 
 
-class Deuspy:
+class Deuspy(DeuspyBase):
 
     def __init__(self, *args, **kwargs):
         self._db = DB(*args, **kwargs)
