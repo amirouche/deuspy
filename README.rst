@@ -1,6 +1,11 @@
 deuspy
 ======
 
+.. figure:: http://weshipedia.fr/wp-content/uploads/2017/01/deuspiUNE2.jpg
+   :alt: artwork
+
+   artwork
+
 **This is a work in progress, the README serves as ROADMAP**
 
 Easy to Install. Easy to run. Easy to use. Database server to build
