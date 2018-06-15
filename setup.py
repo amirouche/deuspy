@@ -23,6 +23,7 @@ setup(
         "aiohttp>=3.3",
         "plyvel>=1.0",
         "requests>=2.19",
+        "daiquiri",
     ],
     classifiers=[
         'Intended Audience :: Developers',
