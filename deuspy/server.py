@@ -1,3 +1,4 @@
+import json
 import logging
 
 import daiquiri
@@ -19,7 +20,12 @@ def pk(*args):
 
 async def index(request):
     deuspy = request.app['deuspy']
-    uids = deuspy.query()
+    data = await request.read()
+    if data:
+        kwargs = json.loads(data)
+    else:
+        kwargs = dict()
+    uids = deuspy.query(**kwargs)
     everything = {uid: deuspy.read(uid) for uid in uids}
     return web.json_response(everything)
 
