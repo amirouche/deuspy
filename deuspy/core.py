@@ -57,7 +57,7 @@ class Deuspy:
         """Delete the document associated with `uid`"""
         doc = self.read(uid)
         if doc is None:
-            return  # XXX: maybe raise something
+            return False  # TODO: replace with an exception
         # delete from the index first...
         for key, value in doc.items():
             index = pack((key, value, uid))
@@ -65,6 +65,7 @@ class Deuspy:
         # ... and delete completly
         key = pack((uid,))
         self._docs.delete(key)
+        return True
 
     def update(self, uid, doc):
         self.delete(uid)
