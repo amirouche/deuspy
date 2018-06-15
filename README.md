@@ -1,5 +1,7 @@
 # deuspy
 
+![artwork](http://weshipedia.fr/wp-content/uploads/2017/01/deuspiUNE2.jpg)
+
 **This is a work in progress, the README serves as ROADMAP**
 
 Easy to Install. Easy to run. Easy to use. Database server to build prototypes.
