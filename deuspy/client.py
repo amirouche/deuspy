@@ -46,8 +46,7 @@ class Deuspy(DeuspyBase):
                 await response_to_exception(response)
 
     async def query(self, **kwargs):
-        url = self._domain + '/?' + urlencode(kwargs)
-        async with self._session.get(url) as response:
+        async with self._session.get(self._domain, json=kwargs) as response:
             if response.status == 200:
                 return await response.json()
             else:
