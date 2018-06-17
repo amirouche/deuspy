@@ -19,7 +19,7 @@ class Deuspy(DeuspyBase):
         self._domain = host + ':' + str(port)
 
     async def create(self, doc):
-        async with self._session.post(self._domain) as response:
+        async with self._session.post(self._domain, json=doc) as response:
             if response.status == 200:
                 return await response.json()
             else:
@@ -46,7 +46,7 @@ class Deuspy(DeuspyBase):
                 await response_to_exception(response)
 
     async def query(self, **kwargs):
-        url = self._domain + '/' + urlencode(kwargs)
+        url = self._domain + '/?' + urlencode(kwargs)
         async with self._session.get(url) as response:
             if response.status == 200:
                 return await response.json()
@@ -59,5 +59,5 @@ class Deuspy(DeuspyBase):
 
 async def connect(host='http://localhost', port=9990):
     session = aiohttp.ClientSession()
-    deuspy = Deuspy(session)
+    deuspy = Deuspy(session, host, port)
     return deuspy
