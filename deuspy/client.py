@@ -54,7 +54,7 @@ class Deuspy(DeuspyBase):
                 await response_to_exception(response)
 
     async def close(self):
-        self.session.close()
+        await self.session.close()
 
 
 async def connect(host='http://localhost', port=9990):
