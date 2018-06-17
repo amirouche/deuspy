@@ -1,3 +1,5 @@
+from urllib.parse import urlencode
+
 import aiohttp
 
 from deuspy.base import DeuspyBase
@@ -44,7 +46,8 @@ class Deuspy(DeuspyBase):
                 await response_to_exception(response)
 
     async def query(self, **kwargs):
-        async with self._session.get(self._domain) as response:
+        url = self._domain + '/' + urlencode(kwargs)
+        async with self._session.get(url) as response:
             if response.status == 200:
                 return await response.json()
             else:

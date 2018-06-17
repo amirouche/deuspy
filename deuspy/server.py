@@ -20,12 +20,8 @@ def pk(*args):
 
 async def index(request):
     deuspy = request.app['deuspy']
-    data = await request.read()
-    if data:
-        kwargs = json.loads(data)
-    else:
-        kwargs = dict()
-    uids = deuspy.query(**kwargs)
+    kwargs = dict(request.query)
+    uids = deuspy.query(kwargs)
     everything = {uid: deuspy.read(uid) for uid in uids}
     return web.json_response(everything)
 
