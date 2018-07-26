@@ -24,6 +24,7 @@ setup(
         "plyvel>=1.0",
         "requests>=2.19",
         "daiquiri",
+        "six==1.11.0",
     ],
     classifiers=[
         'Intended Audience :: Developers',
