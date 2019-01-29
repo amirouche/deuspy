@@ -16,7 +16,7 @@ pickleshare==0.7.5
 pkg-resources==0.0.0
 prompt-toolkit==2.0.4
 ptyprocess==0.6.0
-pycodestyle==2.4.0
+pycodestyle==2.5.0
 pyflakes==2.0.0
 Pygments==2.2.0
 pylint==2.0.1
